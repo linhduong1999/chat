@@ -52,11 +52,14 @@ export class SignUp extends React.Component {
     
 
     checkLastName = () => {
-
         if (this.state.lastName === '') {
             this.setState({
                 lastNameInputReminder : <p style={this.warning}>Please input your last name</p>
             })       
+        } else {
+            this.setState({
+                lastNameInputReminder : ''
+            })
         }
  
     }
@@ -84,7 +87,12 @@ export class SignUp extends React.Component {
             this.setState({
                 emailReminder : <p style={this.warning}>Invalid email address</p>
             })
+        } else {
+            this.setState({
+                emailReminder : ''
+            })
         }
+
     }
 
 
