@@ -1,0 +1,26 @@
+/* why isnt the background fully displayed? */
+
+.logIn {
+    background-image: url("https://i.pinimg.com/originals/99/bb/69/99bb69e4680b0bc9c4c806f5f0f87ad5.png");
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.email, .password {
+    width: 40%;
+    height: 2em;
+    margin: none;
+    padding: none;
+}
+
+.logInButton {
+    background-color: limegreen;
+    width: 15%;
+    height: 3em;
+    font-weight: bolder;
+}

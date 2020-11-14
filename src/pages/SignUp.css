@@ -1,0 +1,48 @@
+.signUp {
+    background-image: url("https://i.pinimg.com/originals/67/3a/b1/673ab1ddbefd571453dd36f8fc8458ea.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    min-height: 100vh;
+}
+.name {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name, #email, .password {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+}
+
+#password, #confirmPassword {
+    flex: 1;
+}
+
+#register, #firstName, #lastName, .password, #email {
+    height: 2em;
+    margin: none;
+    padding: none;
+}
+
+#firstName, #lastName {
+    width: 47%;
+}
+
+.warning {
+    color: red;
+    font-size: small;
+    margin: none;
+    padding: none;
+}
+
+#register {
+    background-color: limegreen;
+    width: 30%;
+    height: 3em;
+    font-weight: bolder;
+}
