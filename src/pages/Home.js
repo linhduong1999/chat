@@ -19,9 +19,6 @@ export class Home extends React.Component {
             notInitStateActiveConversation: false
         };
     }
-
-
-
     componentDidMount() {
 
         // authorizing users'login
@@ -262,7 +259,6 @@ export class Home extends React.Component {
                     return (<span>
                         <div className="sender">
                             <p>{message.sender.name}</p>
-                            {/* <p>{message.timeSent}</p> */}
                         </div>
                         <p className="messageContent" key={index} onMouseLeave={this.hideTimeSent}>{message.content}</p>
                     </span>)
@@ -343,34 +339,42 @@ export class Home extends React.Component {
     }
 
 
+    signOut = async () => {
+        try {
+            await firebase.auth().signOut();
+        } catch (error) {
+            this.setState({
+                errorMessage: error
+            })
+            alert(error.message)
+        }
+        
+    }
+
     render() {
         console.log(this.state.loading);
         if (this.state.loading) {
-            return <FontAwesomeIcon icon={faSpinner} />
+            return (<div>
+                <h1>Loading</h1>
+                <FontAwesomeIcon icon={faSpinner} className="loading" />
+            </div>)
+            
 
         } else {
             return (<div className="home">
                 {/* Friends with whom you are chatting */}
                 <aside className="leftSide">
                     <ul className="friends">
-                        <input className="findConversation" placeholder="Find a conversation"></input>
-                        <section className="messageType">
-                            <p className="messages">Messages</p>
-                            <button className="newConversationBtn" onClick={this.newConversation}><FontAwesomeIcon icon={faUserPlus} /></button>
-                        </section>
-
+                        <h7 className="curConver">Current Conversations</h7>
+                        <button className="btn btn-primary addConver" onClick={this.newConversation}><FontAwesomeIcon icon={faUserPlus} /></button>
+                        
                         {this.renderSidebar()}
                     </ul>
-
-                    {/* why cant i do this to display the sender's name, why is this.state.mesaages.message undefined? */}
-                    {/* <div className="sender">{this.state.messages.message.sender.name}</div> */}
-                    <div className="myself">Myself</div>
                 </aside>
 
                 <main>
                     <header>
-                        <section className="receiver">Messages are being sent to this @person</section>
-                        <input className="search" placeholder="Search"></input>
+                        <h3 className="receiver">Messaging area</h3>
                     </header>
                     {/* Sent texts */}
                     <section className="conversation">
@@ -386,10 +390,12 @@ export class Home extends React.Component {
 
                 </main>
                 <aside className="rightSide">
-                    <h1>Members</h1>
-                    <button onClick={this.addMember} className="btn btn-primary">Add</button>
+                    <button onClick={this.addMember} className="btn btn-primary addMember">Add member</button>
+                    <h3>Current members</h3>
+                    
                     
                     {this.displayMembers()}
+                    <button onClick={this.signOut} className="btn btn-primary signOut">Sign out</button>
                 </aside>
             </div>)
         }

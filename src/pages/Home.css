@@ -1,3 +1,12 @@
+.loading {
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    min-width: 100%;
+    position: absolute;
+    bottom: 50%;
+}
+
 
 /* Whole page layout */
 .home {
@@ -28,9 +37,9 @@
     background-color: rgb(102, 99, 99);
     justify-content: center;
 }
-
-.findConversation {
-    display: flex;
+.addConver {
+    width: 40px;
+    margin: 5px;
 }
 
 .messageType {
@@ -50,8 +59,12 @@
 }
 /* friend list */
 .friends {
-    margin: 0;
+    margin-top: 10%;
     padding: 0;
+}
+.curConver {
+    font-size: small;
+    font-weight: 900;
 }
 
 .findConversation {
@@ -122,14 +135,20 @@ header {
 
 /* displaying messages */
 .conversation {
+    /* display: flex;
+    flex-direction: column-reverse; */
+    
     width: 75vw;
     max-width: 75vw;
-    height: 84vh;
+    height: 80vh;
     overflow: scroll;
     margin-left: 5%;
+
+
 }
 
 .messageContent {
+    
     word-wrap: break-word; 
     white-space: pre-wrap;
     width: 75vw;
@@ -169,4 +188,13 @@ textarea {
 .rightSide {
     min-height: 100%;
     min-width: 20%;
+}
+
+.addMember {
+    min-width: 90%;
+}
+
+.signOut {
+    position: absolute;
+    bottom: 0;
 }

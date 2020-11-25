@@ -112,6 +112,7 @@ export class LogIn extends React.Component {
             <p style={warning}>{this.state.passwordReminder}</p>
 
             <button className="logInButton" onClick={this.loggingIn}>Log In</button>
+            <p>New member? <a href="http://localhost:3000/signup">Sign up here</a></p>
             <p>{this.state.errorMessage}</p>
         </div>)
     }

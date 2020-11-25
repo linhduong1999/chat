@@ -1,7 +1,5 @@
-
-// Find out how to make the messagesContent stop overflowing. 
-// if message collection is a collection belong only to 1 conversation ask of the moment, how do i manage messages after multiple conversations?
 // take care of conversation with myself?
 // how to do "find a conversation"?
 // how to do "search"
 // how to make timeSent display when mouse hover above?
+// take care of redirecting to different link. Stop using <a>href because project might be in a different port
