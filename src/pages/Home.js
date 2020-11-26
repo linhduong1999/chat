@@ -165,7 +165,7 @@ export class Home extends React.Component {
                     //loading: false,
                     userInfo: undefined
                 })
-                window.location.href = "http://localhost:3000/login";
+                this.props.history.push('/login')
             }
         })
 
@@ -299,7 +299,7 @@ export class Home extends React.Component {
     }
 
     newConversation = async () => {
-        window.location.href = "http://localhost:3000/newConversation";
+        this.props.history.push('/newConversation')
     }
 
     displayMembers = () => {

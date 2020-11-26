@@ -61,7 +61,7 @@ export class NewConversation extends React.Component {
                 name: this.state.conversationName,
                 newMessage: false
             })
-            window.location.href = "http://localhost:3000/home";
+            this.props.history.push('/home')
         } catch (error) {
             this.setState({
                 errorMessage: error
@@ -72,7 +72,7 @@ export class NewConversation extends React.Component {
 
     cancelNewConversation = e => {
         e.preventDefault(); // what is this for?
-        window.location.href = "http://localhost:3000/home";
+        this.props.history.push('/home');
     }
 
     render() {

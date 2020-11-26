@@ -182,7 +182,7 @@ export class SignUp extends React.Component {
                     errorMessage: '',
                     succesfullySignedUp: alert("Register!!! Now verify your email.")
                 }) 
-                window.location.href = "http://localhost:3000/login";
+                this.props.history.push('/login')
                 // send email authentification when succesfully registered
                 firebase.auth().currentUser.sendEmailVerification();
                 
